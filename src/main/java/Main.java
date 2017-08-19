@@ -6,8 +6,12 @@ import net.dv8tion.jda.core.JDA;
 
 public class Main {
     public static void main(String args[]){
+<<<<<<< Updated upstream
         JDA jda = new JDABuilder(AccountType.BOT).setToken("token").buildBlocking();
 <<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
