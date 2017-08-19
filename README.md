@@ -1,0 +1,2 @@
+# Shinx
+A simple DiscordBot
