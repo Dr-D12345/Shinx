@@ -3,6 +3,7 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
+import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -16,8 +17,9 @@ import javax.security.auth.login.LoginException;
 
 public class Main {
     public static void main(String args[]) throws LoginException, RateLimitedException, InterruptedException {
-        JDA jda = new JDABuilder(AccountType.BOT).setToken("MzQ4NTI3MTAwMzE3NDAxMDk5.DHoPWw.VW5q4zAFUjLbdC1H8sC2GXjtGDA").buildBlocking();
-        
+       JDA  jda = new JDABuilder(AccountType.BOT).setToken("MzQ4NTI3MTAwMzE3NDAxMDk5.DHoPWw.VW5q4zAFUjLbdC1H8sC2GXjtGDA").buildBlocking();
+        jda.getUsers();
+       final String[] users = {jda.getUsers().toString()};
         jda.addEventListener(new ListenerAdapter() {
             @Override
             public void onMessageReceived(MessageReceivedEvent event) {
@@ -27,6 +29,14 @@ public class Main {
                 if (content.equals("!ping")) {
                     MessageChannel channel = event.getChannel();
                     channel.sendMessage("Pong!").queue();
+                }
+                if(content.equals("!teams")){
+                    MessageChannel channel = event.getChannel();
+                    int randomlength = users.length;
+                    int randomname = (int) (Math.random()* randomlength);
+                    String team1 = users[randomname];
+                    System.out.println("Team one is " + team1);
+
                 }
             }
 
