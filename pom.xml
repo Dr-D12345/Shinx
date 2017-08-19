@@ -7,6 +7,16 @@
     <groupId>Shinx</groupId>
     <artifactId>Shinx</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependency>
+        <groupId>net.dv8tion</groupId>
+        <artifactId>JDA</artifactId>
+        <version>VERSION</version>
+    </dependency>
 
+    <repository>
+        <id>jcenter</id>
+        <name>jcenter-bintray</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
 
 </project>
