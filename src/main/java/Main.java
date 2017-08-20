@@ -30,6 +30,13 @@ public class Main {
                     MessageChannel channel = event.getChannel();
                     channel.sendMessage("Pong!").queue();
                 }
+                if (content.equals("!attack")){
+                    String [] attacks = {"Thunder fang" , "Spark" , "Wild charged" , "Thunderbolt" , "Thunder" , "Bite" , "Crunch" , "Swagger"};
+                    int attackLength = attacks.length;
+                    int randomAttack = (int) (Math.random()* attackLength);
+                    MessageChannel channel = event.getChannel();
+                    channel.sendMessage("Shinx uses " + attacks[attackLength]).queue();
+                }
                 if(content.equals("!teams")){
                     MessageChannel channel = event.getChannel();
                     int randomlength = users.length;
